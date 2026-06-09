@@ -13,16 +13,32 @@ int main(int argc, char *argv[]) {
 	//obs: coordenadas [y], [x]
 	
 	//arquitetura da tela
-	char coordenadas[10][20]= {{ '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*'},
-							   { '*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-						       { '*',' ',' ','O','*',' ','X',' ',' ',' ',' ','Y',' ',' ',' ',' ',' ',' ',' ','*'},
-							   { '*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-							   { '*','>',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ','*'},
-							   { '*',' ','*','*','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-							   { '*','k','k','k',' ',' ',' ',' ',' ',' ','Y',' ',' ',' ','X',' ',' ',' ',' ','*'},
-							   { '*','k','k','k',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-							   { '*','k','k','k',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*'}};
+	char coordenadas[25][25]= {{ '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+						       { '*',' ',' ','0','*',' ','X',' ',' ',' ',' ','Y',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*','>',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ','*','*','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*','k','k','k',' ',' ',' ',' ',' ',' ','Y',' ',' ',' ','X',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*','k','k','k',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*','k','k','k',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '}};
+							   
 	
 	//coordenadas iniciais do personagem
 	int x=1; //coordenada x do personagem(o 0 e a coordenada inicial do personagem)
@@ -30,9 +46,9 @@ int main(int argc, char *argv[]) {
 	int i=0; //contador do y da tela
 	int j=0; //contador do x da tela
 	int n=1; //numero de monstros
-	int vidas=1;//contador de vidas do personagem
+	int vidas=3;//contador de vidas do personagem
 	int arma=0;//vai ser a decisao de arma pelo jogador 1-(espada) 2-(arco e flexa) 3-(cajado)
-	int fim=0; //fim do jogo, se =1
+	int fase=0; //fim do jogo, se =1
 	int Xx[50];//coordenada x do monstro X1;
 	int Xy[50];//coordenada y do monstro X1;
 	int randomX1; // um numero aleatorio exclusivo para X1;
@@ -47,11 +63,12 @@ int main(int argc, char *argv[]) {
 	int io=-1;//contador de localizacao para o dano calsado pelo personagem 
 	int jo=1;//contador de localizacao para o dano calsado pelo personagem z
 	int c; //contaodr
+	char opcao;
+	int renascer=0;//ultilizado para se perder uma vida, voltar ao inicia da fase
+	int livro=0;
+	int contadorvidas=3;
 	
-	
-	
-	
-	
+	contadorvidas=vidas;
 	
 	
 	//coordenadas iniciais dos monstros
@@ -78,7 +95,7 @@ int main(int argc, char *argv[]) {
 	 
 	 
 	 
-	 
+	 //N é o gato
 	 
 	 
 	 
@@ -86,26 +103,342 @@ int main(int argc, char *argv[]) {
 	
 	//O é o npc
 	
+	//menu
+	
+	do{
+	system("cls");
+	printf("===========Dungeon Crawler=============\n");
+	printf("----0w0------Gato roubado------0W0-----\n");
+	printf("''''''''''E uma vila perdida'''''''''''\n");
+	printf("\n\n\n                N~MEOW\n\n");
+	
+	printf("1)	    <   Jogar    >\n");
+	printf("2) 	    <  Tutorial  >\n");
+	printf("3) 	    <  Creditos  >\n");
+
+
+
+
+
+	printf("\n\n");
+	printf(":");
+	scanf(" %c",&opcao);
+	
+	//tutorial
+	
+	if(opcao =='2'){
+		system("cls");
+		printf("===========HISTORIA=============\n");
+		printf("\n Voce esta de viajem por uma vila nova enquanto o seu gato estava andando pelo parque juntamente contigo, no entanto, quando voce virou o olho, ele sumiu.\n\n");
+		system("pause");
+		system("cls");
+		printf("===========HISTORIA=============\n");
+		printf("\nEm meio a isso, voce foi perguntando sobre ele com as pessoas em um bar proximo\n\n ");
+		system("pause");
+		system("cls");
+		printf("===========HISTORIA=============\n");
+		printf("\n Foi nisso, que um idoso chegou para voce e disse que viu um gato entrando em um velho e mortifero portal.\n\n");
+		system("pause");
+		system("cls");
+		printf("===========HISTORIA=============\n");
+		printf("\nDe acordo com as lendas, um heroi viria para remover a orbe maligna do mago do submundo e salvar a vila.\n\n");
+		system("pause");
+		system("cls");
+		printf("===========HISTORIA=============\n");
+		printf("\nEntao, decidido voce foi salvar o seu gato e impedir de que o pior aconteça\n\n");
+		system("pause");
+		system("cls");
+		
+		printf("===========TUTORIAL============\n");
+		printf("\n'O'para atacar\n");
+		printf("\n'i'para interagir\n");
+		printf("\n'w','d','s','a' para se movimentar\n\n");
+		system("pause");
+		system("cls");
+		printf("===========TUTORIAL============\n");
+		printf("\n'X','Y','Z' inimigos\n");
+		printf("\n'0' NPC\n");
+		printf("\n'*' parede\n");
+		printf("\n'#' espinho\n");
+		printf("\n'k' caixas\n");
+		printf("\n'O' botao\n");
+		printf("\n'@' chave\n");
+		printf("\n'D' porta fechada\n");
+		printf("\n'=' porta aberta\n");
+		printf("\n'L' escada\n\n");
+		system("pause");
+		system("cls");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}//fim tutorial
 	
 	
 	
 	
-	//laço de repetição de turnos
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	if(opcao=='1'){
+		
+		
+		system("cls");
+		//laço de repetição de turnos
+		//vila
+		
+		char vila[25][25] ={   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ','*',' ',' ',' ',' ',' ','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+						       { '*',' ',' ','0','*',' ',' ','#',' ',' ','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ','*',' ',' ',' ',' ',' ','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*','>',' ',' ','*',' ',' ',' ',' ','*','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ','*','*','*',' ',' ',' ','*','*','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ',' ',' ',' ',' ',' ','L','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ',' ',' ',' ',' ','*','*','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ',' ',' ',' ',' ',' ','*','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+							   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+							   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '}};
+							   
+							   
+							   
+		for(j=0;j<25;j++){
+			
+			for(i=0;i<25;i++){
+				coordenadas[j][i]=vila[j][i];
+			}	
+			
+			
+		}		   
+							   
+							   
+							   
+		
+			//coordenadas iniciais dos monstros
+	 Xx[0]=0;//coordenada x do monstro X1;
+	 Xy[0]=0;//coordenada y do monstro X1;
+	 
+	 Yx[0]=0;//coordenada x do monstro Y1;
+	 Yy[0]=0;//coordenada y do monstro Y1;
+	 
+	 Yx[1]=0;//coordenada x do monstro Y1;
+	 Yy[1]=0;//coordenada y do monstro Y1;
+	 
+	 Xx[1]=0;//coordenada x do monstro X1;
+	 Xy[1]=0;//coordenada y do monstro X1;
+	 
+	 
+	 
+	 //vidas dos monstros
+	 vidasY[0]=0;
+	 vidasX[0]=0;
+	 vidasY[1]=0;
+	 vidasX[1]=0;
+		
+		
+		
+		
 	do{
 		
-		//Tela do terminal
-		for(j=0;j<10;j++){
+		//vila
+		
+		if(renascer==1){
 			
-			for(i=0;i<20;i++){
+					char vila[25][25] ={   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ',' ',' ',' ',' '},
+										   { '*',' ',' ',' ','*',' ',' ',' ',' ',' ','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+									       { '*',' ',' ','0','*',' ',' ',' ',' ',' ','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+										   { '*',' ',' ',' ','*',' ',' ',' ',' ',' ','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+										   { '*','>',' ',' ','*',' ',' ',' ',' ','*','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+										   { '*',' ','*','*','*',' ',' ',' ','*','*','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+										   { '*',' ',' ',' ',' ',' ',' ',' ',' ','L','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+										   { '*',' ',' ',' ',' ',' ',' ',' ','*','*','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+										   { '*',' ',' ',' ',' ',' ',' ',' ',' ','*','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+										   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ','*','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' '},
+										   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+										   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+										   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+										   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*',' ','*',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+										   { ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '}};
+							   
+							   
+							   
+		for(j=0;j<25;j++){
+			
+			for(i=0;i<25;i++){
+				coordenadas[j][i]=vila[j][i];
+			}	
+			
+			
+		}		   
+							   
+							   
+							   
+		
+			//coordenadas iniciais dos monstros
+	 Xx[0]=0;//coordenada x do monstro X1;
+	 Xy[0]=0;//coordenada y do monstro X1;
+	 
+	 Yx[0]=0;//coordenada x do monstro Y1;
+	 Yy[0]=0;//coordenada y do monstro Y1;
+	 
+	 Yx[1]=0;//coordenada x do monstro Y1;
+	 Yy[1]=0;//coordenada y do monstro Y1;
+	 
+	 Xx[1]=0;//coordenada x do monstro X1;
+	 Xy[1]=0;//coordenada y do monstro X1;
+	 
+	 
+	 
+	 //vidas dos monstros
+	 vidasY[0]=0;
+	 vidasX[0]=0;
+	 vidasY[1]=0;
+	 vidasX[1]=0;
+		
+	//	redefinindo checkpoint do personagem
+			x=1;
+			y=4;
+			
+			
+			
+			renascer=0;// para o jogador nao renascer toda hora
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//vila
+		//Tela do terminal
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		for(j=0;j<=10;j++){
+			
+			for(i=0;i<=10;i++){
 				printf(" %c",coordenadas[j][i]);
 			}	
 			
 			printf("\n");
 		}
+		if(livro==1){
+				printf("\nLivro: Se movimente com as teclas ate chegar na escada\n para entrar na masmorra.\n\n");
+		}
+	
 		
 		printf("\nVidas: %i\n\n",vidas);
 		
-		
+		printf("i - interagir	o - atacar\n\n");
 		
 		
 		
@@ -116,15 +449,22 @@ int main(int argc, char *argv[]) {
 		
 		
 		//npc
-		if((coordenadas[y-1][x]=='O'||coordenadas[y+1][x]=='O'||coordenadas[y][x-1]=='O'||coordenadas[y][x+1]=='O') && teclado=='i'){
+		if((coordenadas[y-1][x]=='0'||coordenadas[y+1][x]=='0'||coordenadas[y][x-1]=='0'||coordenadas[y][x+1]=='0') && teclado=='i'){
 			
 			system("cls");
-			printf("Qual arma voce quer?\n1-espada\n2-arco e flexa\n3-cajado\n4-Odeio armas\n\n");
+			printf("Velho: Voce precisa de uma arma para salvar o seu gato, heroi.\n\nQual arma voce quer?\n1-espada\n2-arco e flexa\n3-cajado\n4-Odeio armas\n\n");
 			
 			
 			printf("Resposta:");
 			scanf(" %c",&respostaparaonpc);
 			
+			system("cls");
+			
+			printf("Velho: pegue esse meu diario, ele vai te guiar...\n\n  ");
+			system("pause");
+			system("cls");
+			
+			livro=1;
 			
 			if(respostaparaonpc=='1'){
 				arma=1;
@@ -1032,27 +1372,27 @@ int main(int argc, char *argv[]) {
 		
 		//impedimento de passagem pelo npc
 		
-		if(teclado=='d'&& coordenadas[y][x+1]=='O'){
+		if(teclado=='d'&& coordenadas[y][x+1]=='0'){
 		
 			coordenadas[y][x]='>';
 			teclado=' ';
 			
 			
 		}
-		else if(teclado=='a'&& coordenadas[y][x-1]=='O'){
+		else if(teclado=='a'&& coordenadas[y][x-1]=='0'){
 				
 			coordenadas[y][x]='<';
 			teclado=' ';
 			
 		}
-		else if(teclado=='w'&& coordenadas[y-1][x]=='O'){
+		else if(teclado=='w'&& coordenadas[y-1][x]=='0'){
 				
 			coordenadas[y][x]='^';
 			teclado=' ';
 			
 			
 		}
-		else if(teclado=='s'&& coordenadas[y+1][x]=='O'){
+		else if(teclado=='s'&& coordenadas[y+1][x]=='0'){
 			
 			coordenadas[y][x]='v';
 			teclado=' ';
@@ -1137,7 +1477,27 @@ int main(int argc, char *argv[]) {
 		
 		
 		
+		//Escada
 		
+		if(teclado=='d'&& coordenadas[y][x+1]=='L'){
+			
+			fase++;
+			
+		}
+		else if(teclado=='a'&& coordenadas[y][x-1]=='L'){
+			
+			fase++;
+		}
+		else if(teclado=='w'&& coordenadas[y-1][x]=='L'){
+			
+			fase++;
+			
+		}
+		else if(teclado=='s'&& coordenadas[y+1][x]=='L'){
+			
+			fase++;
+			
+		}
 		
 		
 		
@@ -1222,18 +1582,19 @@ int main(int argc, char *argv[]) {
 		
 		
 		
-		
+		if(contadorvidas!=vidas){
+			
+			renascer=1;
+			contadorvidas=vidas;
+			
+			
+		}
 		
 		
 		
 		
 	
-		//fim de jogo por falta de vidas
-		if(vidas<=0){
-			
-			
-			fim=1;
-		}
+		
 	
 		//limpando a tela
 		system("cls");
@@ -1241,7 +1602,7 @@ int main(int argc, char *argv[]) {
 		
 		
 		
-	}while(fim==0);
+	}while(fase==0&&vidas>0||renascer>0);
 	
 	
 	
@@ -1252,7 +1613,10 @@ int main(int argc, char *argv[]) {
 	printf("\n\n\n");
 	system("pause");
 	
+	}//if opcao 1
 	
+	
+	}while(opcao!='3');//menu
 	
 	
 	
