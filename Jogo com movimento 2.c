@@ -59,6 +59,10 @@ int main(int argc, char *argv[]) {
 	int vidasY[50]={0};
 	char respostaparaonpc;
 	int vidasX[50]={0}; //vidas para o x1;
+	int Zx[50]={2};
+	int Zy[50]={2};
+	int vidasZ[50]={10};
+	int randomZ1=0;
 	//i //se precionado, o personagem interage com o objeto a sua frente;
 	//o se precionado, ataca
 	int io=-1;//contador de localizacao para o dano calsado pelo personagem 
@@ -68,6 +72,7 @@ int main(int argc, char *argv[]) {
 	int renascer=0;//ultilizado para se perder uma vida, voltar ao inicia da fase
 	int livro=0;
 	int contadorvidas=3;
+	int vitoria=0;
 	
 	contadorvidas=vidas;
 	
@@ -3391,7 +3396,7 @@ int main(int argc, char *argv[]) {
 			printf("\n");
 		}
 		if(livro==1){
-				printf("\nLivro: Quebre as caixas e pegue as chaves para chegar na escada.\n\n");
+				printf("\nLivro: Aperte os botoes e desbloqueie novas areas.\n\n");
 		}
 	
 		
@@ -4904,30 +4909,30 @@ int main(int argc, char *argv[]) {
 		if(renascer==1){
 			
 				char dungeon3[26][26]={{ '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-								       { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
-									   { '*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','D','K',' ',' ',' ','K','K','@','*','N',' ','L','*',' ',' ',' ',' ',' ','O',' ',' ',' ',' ','*'},
+								       { '*',' ','*','K','K',' ',' ',' ','K','K','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*','K',' ',' ',' ',' ',' ','K','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*','>','*',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ',' ',' ','*','*','*','*','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ','X',' ',' ',' ',' ','#','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ',' ',' ',' ','Y',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ','*','*','*','*','*',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ','*',' ',' ',' ','*',' ',' ','#',' ','*',' ',' ',' ',' ',' ','Z',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ','*',' ','@',' ','*',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ','*',' ',' ',' ','*',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ','*','*','*','*','*',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ','X',' ',' ',' ',' ','Y',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*','Y','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','*','*','*','*','*','*','*','*','*','D','*','*'},
+									   { '*',' ','*',' ','Y',' ',' ',' ',' ',' ','X',' ',' ',' ','#',' ',' ',' ','#',' ',' ',' ','#',' ','#','*'},
+									   { '*',' ','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','D',' ','#',' ','#',' ','#',' ','#',' ','#','*'},
+									   { '*','@','*',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','O','#',' ','#',' ',' ',' ','#',' ',' ',' ','#','*'},
 									   { '*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*','*'}};
 							   
 							   
@@ -4943,32 +4948,21 @@ int main(int argc, char *argv[]) {
 							   
 							   
 						//coordenadas iniciais dos monstros
-	Xx[0]=0;//coordenada x do monstro X1;
-	 Xy[0]=0;//coordenada y do monstro X1;
-	 Xx[1]=0;//coordenada x do monstro X1;
-	 Xy[1]=0;//coordenada y do monstro X1;
-	 Xx[2]=0;//coordenada x do monstro X1;
-	 Xy[2]=0;//coordenada y do monstro X1;
-	 Xx[3]=0;//coordenada x do monstro X1;
-	 Xy[3]=0;//coordenada y do monstro X1;
-	 Xx[4]=0;//coordenada x do monstro X1;
-	 Xy[4]=0;//coordenada y do monstro X1;
-	 Xx[5]=0;//coordenada x do monstro X1;
-	 Xy[5]=0;//coordenada y do monstro X1;
-	 Xx[6]=0;//coordenada x do monstro X1;
-	 Xy[6]=0;//coordenada y do monstro X1;
-	 Xx[7]=0;//coordenada x do monstro X1;
-	 Xy[7]=0;//coordenada y do monstro X1;
-	 Xx[8]=0;//coordenada x do monstro X1;
-	 Xy[8]=0;//coordenada y do monstro X1;
-	 Xx[9]=0;//coordenada x do monstro X1;
-	 Xy[9]=0;//coordenada y do monstro X1;
-	 Xx[10]=0;//coordenada x do monstro X1;
-	 Xy[10]=0;//coordenada y do monstro X1;
-	 Xx[11]=0;//coordenada x do monstro X1;
-	 Xy[11]=0;//coordenada y do monstro X1;
-	 Xx[12]=0;//coordenada x do monstro X1;
-	 Xy[12]=0;//coordenada y do monstro X1;
+			//coordenadas iniciais dos monstros
+	 Xx[0]=5;//coordenada x do monstro X1;
+	 Xy[0]=19;//coordenada y do monstro X1;
+	 Xx[1]=6;//coordenada x do monstro X1;
+	 Xy[1]=8;//coordenada y do monstro X1;
+	 Xx[2]=10;//coordenada x do monstro X1;
+	 Xy[2]=22;//coordenada y do monstro X1;
+	 Yx[0]=1;//coordenada x do monstro X1;
+	 Yy[0]=20;//coordenada y do monstro X1;
+	 Yx[1]=4;//coordenada x do monstro X1;
+	 Yy[1]=22;//coordenada y do monstro X1;
+	 Yx[2]=11;//coordenada x do monstro X1;
+	 Yy[2]=7;//coordenada y do monstro X1;
+	 Yx[3]=10;//coordenada x do monstro X1;
+	 Yy[3]=19;//coordenada y do monstro X1;
 	 
 	 
 	 
@@ -4980,21 +4974,14 @@ int main(int argc, char *argv[]) {
 	 
 	 //vidas dos monstros
 	 
-	 vidasX[0]=0;
-	 vidasX[1]=0;
-	 vidasX[2]=0;
-	 vidasX[3]=0;
-	 vidasX[4]=0;
-	 vidasX[5]=0;
-	 vidasX[6]=0;
-	 vidasX[7]=0;
-	 vidasX[8]=0;
-	 vidasX[9]=0;
-	 vidasX[10]=0;
-	 vidasX[11]=0;
-	 vidasX[12]=0;			   
-		
-			//coordenadas iniciais dos monstros
+	 vidasX[0]=3;
+	 vidasX[1]=3;
+	 vidasX[2]=3;
+	 vidasY[0]=1;
+	 vidasY[1]=1;
+	 vidasY[2]=1;
+	 vidasY[3]=1;
+	
 	
 		
 	//	redefinindo checkpoint do personagem
@@ -5059,7 +5046,7 @@ int main(int argc, char *argv[]) {
 			printf("\n");
 		}
 		if(livro==1){
-				printf("\nLivro: Quebre as caixas e pegue as chaves para chegar na escada.\n\n");
+				printf("\nLivro: Os mais poderosos ficam no ultimo andar...\n\n");
 		}
 	
 		
@@ -5076,60 +5063,47 @@ int main(int argc, char *argv[]) {
 		
 		
 		//chaves 1 especificas da fase 2
-		if((y==13-1&&x==1||y==13+1&&x==1||y==13&&x==1-1||y==13&&x==1+1) && teclado=='i'&& coordenadas[13][1]=='O'){
+		if((y==25-1&&x==1||y==25+1&&x==1||y==25&&x==1-1||y==25&&x==1+1) && teclado=='i'&& coordenadas[25][1]=='@'){
 			
 			
-			coordenadas[13][1]=' ';
-			coordenadas[1][2]='k';
-			coordenadas[2][2]='k';
-			coordenadas[3][2]='k';
-			coordenadas[3][3]='k';
-			coordenadas[3][4]='k';
-			coordenadas[3][5]='k';
-			coordenadas[3][6]='k';
+			coordenadas[25][1]=' ';
+			coordenadas[1][2]='=';
+			
+			
+			
 		}
 		//chaves 2 especificas da fase 2
-		if((y==15-1&&x==3||y==15+1&&x==3||y==15&&x==3-1||y==15&&x==3+1) && teclado=='i'&& coordenadas[15][3]=='@'){
+		if((y==25-1&&x==13||y==25+1&&x==13||y==25&&x==13-1||y==25&&x==13+1) && teclado=='i'&& coordenadas[25][13]=='O'){
 			
-			coordenadas[14][7]='=';
-			coordenadas[15][3]=' ';
+			coordenadas[9][7]='k';
+			coordenadas[25][13]=' ';
 			
 			
 		}
 		//chaves 3 especificas da fase 2
-		if((y==10-1&&x==15||y==10+1&&x==15||y==10&&x==15-1||y==10&&x==15+1) && teclado=='i'&& coordenadas[10][15]=='@'){
+		if((y==12-1&&x==7||y==12+1&&x==7||y==12&&x==7-1||y==12&&x==7+1) && teclado=='i'&& coordenadas[12][7]=='@'){
 			
-			coordenadas[14][1]='=';
-			coordenadas[10][15]=' ';
-			
-			
-		}
-		
-		if((y==15-1&&x==1||y==15+1&&x==1||y==15&&x==1-1||y==15&&x==1+1) && teclado=='i'&& coordenadas[15][1]=='O'){
-			
-			coordenadas[1][7]='k';
-			coordenadas[15][1]=' ';
-				coordenadas[2][7]='k';
-			
-		}
-		
-		if((y==3-1&&x==10||y==3+1&&x==10||y==3&&x==10-1||y==3&&x==10+1) && teclado=='i'&& coordenadas[3][10]=='@'){
-			
-			coordenadas[2][15]='=';
-			coordenadas[3][10]=' ';
+			coordenadas[24][14]='=';
+			coordenadas[12][7]=' ';
 			
 			
 		}
 		
-		
-			if((y==1-1&&x==15||y==1+1&&x==15||y==1&&x==15-1||y==1&&x==15+1) && teclado=='i'&& coordenadas[1][15]=='@'){
+		if((y==1-1&&x==9||y==1+1&&x==9||y==1&&x==9-1||y==1&&x==9+1) && teclado=='i'&& coordenadas[1][9]=='@'){
 			
-			coordenadas[14][11]='=';
-			coordenadas[1][15]=' ';
+			coordenadas[21][24]='=';
+			coordenadas[1][9]=' ';
 			
 			
 		}
 		
+			if((y==1-1&&x==21||y==1+1&&x==21||y==1&&x==21-1||y==1&&x==21+1) && teclado=='i'&& coordenadas[1][21]=='O'){
+			
+			coordenadas[5][12]='k';
+			coordenadas[1][21]=' ';
+			
+			
+		}
 		
 		
 		
@@ -6042,6 +6016,12 @@ int main(int argc, char *argv[]) {
 			}//vidas y1
 			
 			
+			
+			
+			
+			
+			
+		
 			if(vidasY[c]<=0){
 					coordenadas[Yy[c]][Yx[c]]=' ';
 					
@@ -6053,6 +6033,309 @@ int main(int argc, char *argv[]) {
 			
 			//fim Y1
 		}//for do contador
+		
+		
+		
+		
+		//z boss
+		
+		
+		
+		for(c=0;c<=n;c++){//laco de repeticao de numero de monstros
+		
+		
+		
+			//X1
+				
+				//X1 variavel principal
+				randomZ1= rand() % 4+1;
+				
+				
+				
+				
+				
+				if(vidasZ[c]<=0){//fazer o monstro sumir ao final das vidas
+					coordenadas[Zy[c]][Zx[c]]=' ';
+				}
+		
+			if(vidasZ[c]>0){//contador de vidas
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					//paredes para o X1 && caixas
+				
+				if(randomZ1==1&& coordenadas[Zy[c]][Zx[c]+1]=='*'||randomZ1==1&&coordenadas[Zy[c]][Zx[c]+1]=='k'||randomZ1==1&&coordenadas[Zy[c]][Zx[c]+1]=='X'||randomZ1==1&&coordenadas[Zy[c]][Zx[c]+1]=='Y'){
+					
+					randomZ1=0;
+					
+					
+				}
+				else if(randomZ1==2&& coordenadas[Zy[c]][Zx[c]-1]=='*'||randomZ1==2&&coordenadas[Zy[c]][Zx[c]-1]=='k'||randomZ1==1&&coordenadas[Zy[c]][Zx[c]-1]=='X'||randomZ1==1&&coordenadas[Zy[c]][Zx[c]-1]=='Y'){
+					
+					randomZ1=0;
+					
+					
+				}
+				else if(randomZ1==3&& coordenadas[Zy[c]-1][Zx[c]]=='*'||randomZ1==3&&coordenadas[Zy[c]-1][Zx[c]]=='k'||randomZ1==1&&coordenadas[Zy[c]-1][Zx[c]]=='X'||randomZ1==1&&coordenadas[Zy[c]-1][Zx[c]]=='Y'){
+					
+					randomZ1=0;
+					
+					
+				}
+				else if(randomZ1==4&& coordenadas[Zy[c]+1][Zx[c]]=='*'||randomZ1==4&&coordenadas[Zy[c]+1][Zx[c]]=='k'||randomZ1==1&&coordenadas[Zy[c]+1][Zx[c]]=='X'||randomZ1==1&&coordenadas[Zy[c]+1][Zx[c]]=='Y'){
+					
+					randomZ1=0;
+				
+				
+				}
+				
+				//espinhos para o x1
+				if(randomZ1==1&& coordenadas[Zy[c]][Zx[c]+1]=='#'){
+					
+					randomZ1=0;
+					vidasZ[c]--;
+					
+				}
+				else if(randomZ1==2&& coordenadas[Zy[c]][Zx[c]-1]=='#'){
+					
+					randomZ1=0;
+					vidasZ[c]--;
+					
+				}
+				else if(randomZ1==3&& coordenadas[Zy[c]-1][Zx[c]]=='#'){
+					
+					randomZ1=0;
+					vidasZ[c]--;
+					
+				}
+				else if(randomZ1==4&& coordenadas[Zy[c]+1][Zx[c]]=='#'){
+					
+					randomZ1=0;
+					vidasZ[c]--;
+				
+				}
+				
+				
+				//escadas
+				
+				if(randomZ1==1&& coordenadas[Zy[c]][Zx[c]+1]=='L'){
+					
+					randomZ1=0;
+					
+					
+				}
+				else if(randomZ1==2&& coordenadas[Zy[c]][Zx[c]-1]=='L'){
+					
+					randomZ1=0;
+				
+					
+				}
+				else if(randomZ1==3&& coordenadas[Zy[c]-1][Zx[c]]=='L'){
+					
+					randomZ1=0;
+				
+					
+				}
+				else if(randomZ1==4&& coordenadas[Zy[c]+1][Zx[c]]=='L'){
+					
+					randomZ1=0;
+				
+				
+				}
+				
+				
+					//chaves
+				
+				if(randomZ1==1&& coordenadas[Zy[c]][Zx[c]+1]=='@'){
+					
+					randomZ1=0;
+					
+					
+				}
+				else if(randomZ1==2&& coordenadas[Zy[c]][Zx[c]-1]=='@'){
+					
+					randomZ1=0;
+				
+					
+				}
+				else if(randomZ1==3&& coordenadas[Zy[c]-1][Zx[c]]=='@'){
+					
+					randomZ1=0;
+				
+					
+				}
+				else if(randomZ1==4&& coordenadas[Zy[c]+1][Zx[c]]=='@'){
+					
+					randomZ1=0;
+				
+				
+				}
+				
+				
+					//escadas
+				
+				if(randomZ1==1&& coordenadas[Zy[c]][Zx[c]+1]=='O'){
+					
+					randomZ1=0;
+					
+					
+				}
+				else if(randomZ1==2&& coordenadas[Zy[c]][Zx[c]-1]=='O'){
+					
+					randomZ1=0;
+				
+					
+				}
+				else if(randomZ1==3&& coordenadas[Zy[c]-1][Zx[c]]=='O'){
+					
+					randomZ1=0;
+				
+					
+				}
+				else if(randomZ1==4&& coordenadas[Zy[c]+1][Zx[c]]=='O'){
+					
+					randomZ1=0;
+				
+				
+				}
+				
+				
+					//escadas
+				
+				if(randomZ1==1&& coordenadas[Zy[c]][Zx[c]+1]=='D'){
+					
+					randomZ1=0;
+					
+					
+				}
+				else if(randomZ1==2&& coordenadas[Zy[c]][Zx[c]-1]=='D'){
+					
+					randomZ1=0;
+				
+					
+				}
+				else if(randomZ1==3&& coordenadas[Zy[c]-1][Zx[c]]=='D'){
+					
+					randomZ1=0;
+				
+					
+				}
+				else if(randomZ1==4&& coordenadas[Zy[c]+1][Zx[c]]=='D'){
+					
+					randomZ1=0;
+				
+				
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				//colisao do X1 com o personagem 
+				if(randomZ1==1&& coordenadas[Zy[c]][Zx[c]+1]=='^'||coordenadas[Zy[c]][Zx[c]+1]=='>'||coordenadas[Zy[c]][Zx[c]+1]=='<'||coordenadas[Zy[c]][Zx[c]+1]=='v'){
+					
+					randomZ1=0;
+					vidas--;
+					
+				}
+				else if(randomZ1==2&& coordenadas[Zy[c]][Zx[c]-1]=='^'||coordenadas[Zy[c]][Zx[c]+1]=='>'||coordenadas[Zy[c]][Zx[c]+1]=='<'||coordenadas[Zy[c]][Zx[c]+1]=='v'){
+					
+					randomZ1=0;
+					vidas--;
+					
+				}
+				else if(randomZ1==3&& coordenadas[Zy[c]-1][Zx[c]]=='^'||coordenadas[Zy[c]][Zx[c]+1]=='>'||coordenadas[Zy[c]][Zx[c]+1]=='<'||coordenadas[Zy[c]][Zx[c]+1]=='v'){
+					
+					randomZ1=0;
+					vidas--;
+					
+				}
+				else if(randomZ1==4&& coordenadas[Zy[c]+1][Zx[c]]=='^'||coordenadas[Zy[c]][Zx[c]+1]=='>'||coordenadas[Zy[c]][Zx[c]+1]=='<'||coordenadas[Zy[c]][Zx[c]+1]=='v'){
+					
+					randomZ1=0;
+					vidas--;
+				
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				//inteligencia do X1
+				
+				
+				
+				
+				if(randomZ1==1){
+					Zx[c]++;
+					coordenadas[Zy[c]][Zx[c]]='X';
+					coordenadas[Zy[c]][Zx[c]-1]=' ';
+				}
+				
+				if(randomZ1==2){
+					Zx[c]--;
+					coordenadas[Zy[c]][Zx[c]]='X';
+					coordenadas[Zy[c]][Zx[c]+1]=' ';
+				}
+			
+				if(randomZ1==3){
+					Zy[c]--;
+					coordenadas[Zy[c]][Zx[c]]='X';
+					coordenadas[Zy[c]+1][Zx[c]]=' ';
+				}
+		    
+				if(randomZ1==4){
+					Zy[c]++;
+					coordenadas[Zy[c]][Zx[c]]='X';
+					coordenadas[Zy[c]-1][Zx[c]]=' ';
+				}
+				
+				
+				
+				
+				
+				
+			
+			
+			}//fim vidas x1
+			
+			
+			
+	}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -6306,21 +6589,21 @@ int main(int argc, char *argv[]) {
 		if(teclado=='d'&& coordenadas[y][x+1]=='L'){
 			
 			fase++;
-			
+			vitoria=1;
 		}
 		else if(teclado=='a'&& coordenadas[y][x-1]=='L'){
 			
-			fase++;
+			fase++;	vitoria=1;
 		}
 		else if(teclado=='w'&& coordenadas[y-1][x]=='L'){
 			
 			fase++;
-			
+				vitoria=1;
 		}
 		else if(teclado=='s'&& coordenadas[y+1][x]=='L'){
 			
 			fase++;
-			
+				vitoria=1;
 		}
 		
 		
@@ -6458,7 +6741,28 @@ int main(int argc, char *argv[]) {
 
 		
 		
+		if(vitoria==1){
+			
+			
+			system("cls");
+			printf("\n\nPARABENSSSSSSSS :)\n");
+			printf("VOCE RECUPEROU O SEU GATO E SALVOU A VILA DERROTANDO O MAGO MALDOSO INFERNAL\n\n\n");
+			printf("Voce e seu gato viveram felizes para sempre :)\n\n\n");
+			printf("fim");
+			
+			
+			system("pause");
+			system("cls");
+			
+			
+			
+		}
 		
+			
+			
+			
+			
+			
 		
 		
 		
