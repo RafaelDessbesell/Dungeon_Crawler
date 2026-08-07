@@ -40,6 +40,15 @@ O jogo é controlado inteiramente pelo teclado.
 
 ---
 
+## 🤖 Processo de Desenvolvimento & IA
+
+Projeto desenvolvido em **C** para consolidar conceitos de algoritmos do curso de Ciência da Computação. 
+
+Durante a construção do código, utilizei ferramentas de **Inteligência Artificial** como assistentes técnicos para:
+* **Debugging:** Identificação e resolução de bugs no console.
+* **Aprendizado:** Compreensão aprofundada dos erros apontados pelo compilador.
+---
+
 ## 👥 Equipe de Desenvolvimento
 
 * **Rafael alessandro Dessbesell** - *26070051*
